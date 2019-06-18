@@ -1,13 +1,11 @@
 from flask import Flask
 from flask_restful import Api
-from flask_jwt import JWT
 from flask_cors import CORS
 from flasgger import Swagger
 
 from resources.city import City, CityList
 
 app = Flask(__name__)
-#cors = CORS(app)
 cors = CORS(app, resorces={r'/*': {"origins": '*'}})
 app.config['CORS_HEADERS'] = 'application/json'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
@@ -30,8 +28,6 @@ app.config['SWAGGER'] = {
 }
 
 Swagger(app)
-
-#jwt = JWT(app, authenticate, identity)
 
 api.add_resource(City, '/city')
 api.add_resource(CityList, '/cities')
