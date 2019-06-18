@@ -1,0 +1,26 @@
+Return a result of city delete
+---
+tags:
+  - cities
+parameters:
+  - in: header
+    name: Authentication-Token
+    description: Token correspondent of internal
+    required: true
+    type: string
+definitions:
+  Result_Cities:
+    type: object
+    properties:
+      city_name:
+        type: string
+responses:
+  200:
+    description: Return a result of data json
+    schemes: ['https']
+    schema:
+      properties:
+        result:
+          $ref: '#/definitions/Result_Cities'
+  403:
+    description: Unauthorized Access. Incorrect x-api-key
