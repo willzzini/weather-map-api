@@ -22,9 +22,9 @@ def create_tables():
 app.config['SWAGGER'] = {
     "uiversion": 3,
     "swagger_version": "3.0",
-    "title": "Weather Map API",
-    "specs_route": "/weather_map.py-api-docs/",
-    "description": "This is the version 1 weather_map.py-map API",
+    "title": "Weather API",
+    "specs_route": "/weather-api-docs/",
+    "description": "This is the version 1 weather-map API",
 }
 
 Swagger(app)
@@ -35,4 +35,4 @@ api.add_resource(CityList, '/cities')
 if __name__ == '__main__':
     from db import db
     db.init_app(app)
-    app.run(host='0.0.0.0', port=8000, debug=True)
+    app.run(host='0.0.0.0', port=80, debug=True)
