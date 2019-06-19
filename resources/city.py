@@ -26,8 +26,12 @@ class City(Resource):
                 "An city with this name '{}' already exists.".format(
                     data['city_name'])}, 400
 
-        teste = city_weather(xapi_key, data['city_name'])
-
+        weather_map = city_weather(xapi_key, data['city_name'])
+        if weather_map['cod'] != 200 or weather_map['name'] != data['city_name']:
+            return {
+                'message':
+                "This city '{}' does not exist in Api.".format(
+                    data['city_name'])}, 400
 
         city = CityModel(data['city_name'])
 
