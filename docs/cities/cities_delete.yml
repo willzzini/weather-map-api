@@ -1,11 +1,11 @@
 Return a result of city delete
 ---
 tags:
-  - cities
+  - Cities
 parameters:
   - in: header
-    name: Authentication-Token
-    description: Token correspondent of internal
+    name: Api-key
+    description: Api-key correspondent of API
     required: true
     type: string
 definitions:
