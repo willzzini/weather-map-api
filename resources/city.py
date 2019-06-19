@@ -3,7 +3,7 @@ from security import require_appkey
 from flasgger import swag_from
 from models.city import CityModel
 from weather.weather_map import city_weather
-from flask import request, abort
+from flask import request
 
 
 class City(Resource):
