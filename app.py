@@ -23,8 +23,8 @@ app.config['SWAGGER'] = {
     "uiversion": 3,
     "swagger_version": "3.0",
     "title": "Weather Map API",
-    "specs_route": "/weather-api-docs/",
-    "description": "This is the version 1 weather-map API",
+    "specs_route": "/weather_map.py-api-docs/",
+    "description": "This is the version 1 weather_map.py-map API",
 }
 
 Swagger(app)
