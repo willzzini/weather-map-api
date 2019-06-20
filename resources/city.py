@@ -67,7 +67,6 @@ class Forecast(Resource):
     def get(self, name):
         xapi_key = request.headers.get('X-Api-Key')
         weather_forecast = city_weather_forecast(xapi_key, name)
-
         return {
             'cities':
             list(map(lambda x: x.json(), CityModel.query.all()))}

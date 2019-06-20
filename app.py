@@ -30,7 +30,7 @@ app.config['SWAGGER'] = {
 Swagger(app)
 
 api.add_resource(City, '/city')
-api.add_resource(Forecast, '/city/<string:name')
+api.add_resource(Forecast, '/forecast/<string:name>')
 api.add_resource(CityList, '/cities')
 
 if __name__ == '__main__':
