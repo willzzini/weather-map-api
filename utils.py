@@ -50,5 +50,5 @@ def format_data(json_data):
                                   'Weather_condition': description,
                                   'celcius': '{:.2f}'.format(temperature - 273.15),
                                   'farenheit': '%.2f' % (temperature * 9 / 5 - 459.67)})
-    print("##########", dict)
+    return dict
 

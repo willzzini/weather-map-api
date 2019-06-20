@@ -30,9 +30,7 @@ def city_weather_forecast(api_key, city_name):
             URL,
             headers=HEADERS,
             timeout=10).json()
-        data = format_data(json.loads(json.dumps(get_data, default=_json_encode)))
-
-        return json.loads(json.dumps(get_data, default=_json_encode))
+        return format_data(json.loads(json.dumps(get_data, default=_json_encode)))
     except requests.exceptions.Timeout:
         return abort(408, {
             "status": False,
