@@ -3,7 +3,7 @@ from flask_restful import Api
 from flask_cors import CORS
 from flasgger import Swagger
 
-from resources.city import City, CityList
+from resources.city import City, CityList, Forecast
 
 app = Flask(__name__)
 cors = CORS(app, resorces={r'/*': {"origins": '*'}})
@@ -30,9 +30,10 @@ app.config['SWAGGER'] = {
 Swagger(app)
 
 api.add_resource(City, '/city')
+api.add_resource(Forecast, '/city')
 api.add_resource(CityList, '/cities')
 
 if __name__ == '__main__':
     from db import db
     db.init_app(app)
-    app.run(host='0.0.0.0', port=80, debug=True)
+    app.run(host='0.0.0.0', port=8000, debug=True)

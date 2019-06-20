@@ -60,3 +60,12 @@ class CityList(Resource):
         return {
             'cities':
             list(map(lambda x: x.json(), CityModel.query.all()))}
+
+
+class Forecast(Resource):
+    @require_appkey
+    def get(self):
+        return {
+            'cities':
+            list(map(lambda x: x.json(), CityModel.query.all()))}
+
