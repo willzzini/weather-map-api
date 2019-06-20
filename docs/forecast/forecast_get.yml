@@ -1,0 +1,26 @@
+Return a result of forecast five days
+---
+tags:
+  - Cities
+parameters:
+  - in: header
+    name: Api-key
+    description: Api-key correspondent of API
+    required: true
+    type: string
+definitions:
+  Result_Cities:
+    type: object
+    properties:
+      city_name:
+        type: string
+responses:
+  200:
+    description: Return a result of data json
+    schemes: ['https']
+    schema:
+      properties:
+        result:
+          $ref: '#/definitions/Result_Cities'
+  403:
+    description: Unauthorized Access. Incorrect x-api-key

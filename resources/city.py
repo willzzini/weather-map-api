@@ -56,6 +56,7 @@ class City(Resource):
 
 class CityList(Resource):
     @require_appkey
+    @swag_from("../docs/cities/cities_get.yml")
     def get(self):
         return {
             'cities':
@@ -64,6 +65,7 @@ class CityList(Resource):
 
 class Forecast(Resource):
     @require_appkey
+    @swag_from("../docs/forecast/forecast_get.yml")
     def get(self, name):
         xapi_key = request.headers.get('X-Api-Key')
         weather_forecast = city_weather_forecast(xapi_key, name)
