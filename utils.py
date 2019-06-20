@@ -1,5 +1,4 @@
 import datetime
-import calendar
 
 
 def _json_encode(obj):
@@ -11,6 +10,7 @@ def _json_encode(obj):
 
 
 def format_data(json_data):
+    current_date = ''
     for item in json_data['list']:
 
         time = item['dt_txt']
@@ -43,5 +43,3 @@ def format_data(json_data):
         print('Celcius: {:.2f}'.format(temperature - 273.15))
         print('Farenheit: %.2f' % (temperature * 9 / 5 - 459.67))
 
-    calend = calendar.month(int(year), int(month))
-    print('\n' + calend)
