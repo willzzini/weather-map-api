@@ -15,8 +15,8 @@ class City(Resource):
         help="Every cities needs a name."
     )
 
-    @swag_from("../docs/cities/cities_post.yml")
     @require_appkey
+    @swag_from("../docs/cities/cities_post.yml")
     def post(self):
         data = City.parser.parse_args()
         xapi_key = request.headers.get('X-Api-Key')
@@ -43,8 +43,8 @@ class City(Resource):
 
         return city.json(), 201
 
-    @swag_from("../docs/cities/cities_delete.yml")
     @require_appkey
+    @swag_from("../docs/cities/cities_delete.yml")
     def delete(self):
         data = City.parser.parse_args()
         city = CityModel.find_by_city_name(data['city_name'])
