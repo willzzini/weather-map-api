@@ -11,6 +11,7 @@ def _json_encode(obj):
 
 def format_data(json_data):
     current_date = ''
+    dict = {}
     for item in json_data['list']:
 
         time = item['dt_txt']
@@ -20,7 +21,10 @@ def format_data(json_data):
             current_date = next_date
             year, month, day = current_date.split('-')
             date = {'y': year, 'm': month, 'd': day}
-            print('\n{m}/{d}/{y}'.format(**date))
+            print('\n{d}/{m}/{y}'.format(**date))
+            date_format = '{d}/{m}/{y}'.format(**date)
+            dict[date_format] = []
+
 
         hour = int(hour[:2])
 
@@ -37,9 +41,14 @@ def format_data(json_data):
 
         temperature = item['main']['temp']
 
-        description = item['weather'][0]['description'],
+        description = item['weather'][0]['description']
 
         print('Weather condition: %s' % description)
         print('Celcius: {:.2f}'.format(temperature - 273.15))
         print('Farenheit: %.2f' % (temperature * 9 / 5 - 459.67))
+        dict[date_format].append({'hour': '%i:00 %s' % (hour, meridiem),
+                                  'Weather_condition': description,
+                                  'celcius': '{:.2f}'.format(temperature - 273.15),
+                                  'farenheit': '%.2f' % (temperature * 9 / 5 - 459.67)})
+    print("##########", dict)
 
