@@ -2,7 +2,7 @@ from flask_restful import Resource, reqparse
 from security import require_appkey
 from flasgger import swag_from
 from models.city import CityModel
-from weather.weather_map import city_weather
+from weather.weather_map import city_weather, city_weather_forecast
 from flask import request
 
 
@@ -64,7 +64,10 @@ class CityList(Resource):
 
 class Forecast(Resource):
     @require_appkey
-    def get(self):
+    def get(self, name):
+        xapi_key = request.headers.get('X-Api-Key')
+        weather_forecast = city_weather_forecast(xapi_key, name)
+
         return {
             'cities':
             list(map(lambda x: x.json(), CityModel.query.all()))}
