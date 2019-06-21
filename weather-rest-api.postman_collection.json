@@ -1,0 +1,168 @@
+{
+	"id": "19356d28-2dba-406e-fb47-03dbceab80e0",
+	"name": "weather-rest-api",
+	"description": "",
+	"order": [
+		"185e03fa-cb35-3082-46a4-e3d90baae7c8",
+		"bad32bee-3301-dba0-4ed4-8a569b17ebd4",
+		"ba04baf5-c312-56b4-5d24-cc8afb637416",
+		"e38dd648-106e-5f14-d6bd-0525ed9a8859"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 0,
+	"owner": "1703561",
+	"public": false,
+	"requests": [
+		{
+			"id": "185e03fa-cb35-3082-46a4-e3d90baae7c8",
+			"headers": "Accept: application/json\nx-api-key: eb8b1a9405e659b2ffc78f0a520b1a46\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-api-key",
+					"value": "eb8b1a9405e659b2ffc78f0a520b1a46",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/cities",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1560911212938,
+			"name": "cities",
+			"description": null,
+			"collectionId": "19356d28-2dba-406e-fb47-03dbceab80e0"
+		},
+		{
+			"id": "ba04baf5-c312-56b4-5d24-cc8afb637416",
+			"headers": "Accept: application/json\nContent-Type: application/json\nx-api-key: eb8b1a9405e659b2ffc78f0a520b1a46\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-api-key",
+					"value": "eb8b1a9405e659b2ffc78f0a520b1a46",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/city",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1560911239045,
+			"name": "city<name>",
+			"description": null,
+			"collectionId": "19356d28-2dba-406e-fb47-03dbceab80e0",
+			"rawModeData": "{\n    \"city_name\": \"Santos\"\n}"
+		},
+		{
+			"id": "bad32bee-3301-dba0-4ed4-8a569b17ebd4",
+			"headers": "Accept: application/json\nx-api-key: eb8b1a9405e659b2ffc78f0a520b1a46\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-api-key",
+					"value": "eb8b1a9405e659b2ffc78f0a520b1a46",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/forecast/Blumenau",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1561014928945,
+			"name": "forecast",
+			"description": null,
+			"collectionId": "19356d28-2dba-406e-fb47-03dbceab80e0"
+		},
+		{
+			"id": "e38dd648-106e-5f14-d6bd-0525ed9a8859",
+			"headers": "Accept: application/json\nx-api-key: eb8b1a9405e659b2ffc78f0a520b1a46\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-api-key",
+					"value": "eb8b1a9405e659b2ffc78f0a520b1a46",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/city",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1560907995070,
+			"name": "city<name>",
+			"description": null,
+			"collectionId": "19356d28-2dba-406e-fb47-03dbceab80e0",
+			"rawModeData": "{\n\t\"city_name\": \"Balneario\"\n}"
+		}
+	]
+}

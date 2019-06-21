@@ -2,7 +2,7 @@ from flask_restful import Resource, reqparse
 from security import require_appkey
 from flasgger import swag_from
 from models.city import CityModel
-from weather.weather_map import city_weather
+from weather.weather_map import city_weather, city_weather_forecast
 from flask import request
 
 
@@ -15,8 +15,8 @@ class City(Resource):
         help="Every cities needs a name."
     )
 
-    @swag_from("../docs/cities/cities_post.yml")
     @require_appkey
+    @swag_from("../docs/cities/cities_post.yml")
     def post(self):
         data = City.parser.parse_args()
         xapi_key = request.headers.get('X-Api-Key')
@@ -43,8 +43,8 @@ class City(Resource):
 
         return city.json(), 201
 
-    @swag_from("../docs/cities/cities_delete.yml")
     @require_appkey
+    @swag_from("../docs/cities/cities_delete.yml")
     def delete(self):
         data = City.parser.parse_args()
         city = CityModel.find_by_city_name(data['city_name'])
@@ -56,7 +56,18 @@ class City(Resource):
 
 class CityList(Resource):
     @require_appkey
+    @swag_from("../docs/cities/cities_get.yml")
     def get(self):
         return {
             'cities':
             list(map(lambda x: x.json(), CityModel.query.all()))}
+
+
+class Forecast(Resource):
+    @require_appkey
+    @swag_from("../docs/forecast/forecast_get.yml")
+    def get(self, name):
+        xapi_key = request.headers.get('X-Api-Key')
+        weather_forecast = city_weather_forecast(xapi_key, name)
+        return weather_forecast
+
