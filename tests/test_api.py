@@ -36,7 +36,7 @@ class TestSetup(unittest.TestCase):
             URL_LOCALHOST + "/cities",
             data=FORBIDDEN_CREDENTIALS_LOCALHOST)
 
-    def test_01_login_localhost(self):
+    def test_01_endpoint_cities_localhost(self):
         user = self.setup_cities_localhost()
         forbidden_cities_localhost = self.setup_forbidden_cities_localhost()
 
