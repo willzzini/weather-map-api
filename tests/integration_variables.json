@@ -1,0 +1,25 @@
+{
+	"environment": [
+		{
+			"localhost": {
+				"url": "http://127.0.0.1:4000",
+				"credentials": [
+					{
+						"xapi_key": "eb8b1a9405e659b2ffc78f0a520b1a46"
+					}
+				]
+			},
+
+			"forbidden_localhost": {
+				"url": "http://127.0.0.1:4000",
+				"credentials": [
+					{
+						"xapi_key": "wrong"
+					}
+				]
+			},
+
+		}
+	],
+
+}
